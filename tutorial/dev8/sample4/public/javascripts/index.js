@@ -18,3 +18,15 @@ function setValue() {
     const text2Value = 'Rakus!';
     $('#text2').text(text2Value);
 }
+
+// 値の取得
+// val()
+// text()
+
+// 値をセット
+// val("値")
+// text("値")
+
+// ・.html()では、htmlのタグが反映されて書き換え
+// ・.text()では、htmlのタグが反映されず文字列として書き換え
+// ・.val()では、valueの値を書き換える（オプションでvalueを設定できるものにしか使えない）
