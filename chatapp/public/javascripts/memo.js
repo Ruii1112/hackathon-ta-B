@@ -17,7 +17,8 @@ function memo() {
     // 入力されたメッセージを取得
     const message = getMemo();
     // メモの内容を表示
-    $('#thread').prepend('<p>' + userName + 'さん' + '：' + message +'</p>');
+    $('#thread').prepend('<p>' + userName + 'さんのメモ: ' + message +'</p>');
+    $('#message').val('');
 
     return false;
 }
