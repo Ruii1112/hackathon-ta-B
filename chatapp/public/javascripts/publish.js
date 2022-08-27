@@ -1,11 +1,23 @@
 'use strict';
 
+// ユーザ名取得関数
+function getUserName(){
+    const userName = $('#userName').val();
+    return userName
+}
+
+// 入力されたメッセージ内容の取得関数
+function getMessage(){
+    const message = $('#message').val();
+    return message
+}
+
 // 投稿メッセージをサーバに送信する
 function publish() {
     // ユーザ名を取得
-    const userName = $('#userName').val();
+    const userName = getUserName();
     // 入力されたメッセージを取得
-    const message = $('#message').val();
+    const message = getMessage();
     $('#message').val('');
     // 投稿内容を送信
     socket.emit('sendMessageEvent', userName + 'さん: ' + message);

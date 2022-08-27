@@ -1,9 +1,15 @@
 'use strict';
 
+// ユーザ名取得関数
+function getUserName(){
+    const userName = $('#userName').val();
+    return userName
+}
+
 // 退室メッセージをサーバに送信する
 function exit() {
     // ユーザ名取得
-    const userName = $('#userName').val();
+    const userName = getUserName();
     // 退室メッセージイベントを送信する
     socket.emit('sendExitEvent', userName);
     // 退室

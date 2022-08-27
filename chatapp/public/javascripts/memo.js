@@ -1,15 +1,17 @@
 'use strict';
 
-
+// 入力されたメッセージ内容の取得関数
 function getMemo(){
     const memo = $('#message').val();
     return memo
 }
 
+//　ユーザ名の取得関数
 function getName(){
     const name = $('#userName').val();
     return name
 }
+
 // メモを画面上に表示する
 function memo() {
     // ユーザ名を取得
@@ -19,6 +21,4 @@ function memo() {
     // メモの内容を表示
     $('#thread').prepend('<p>' + userName + 'さんのメモ: ' + message +'</p>');
     $('#message').val('');
-
-    return false;
 }
