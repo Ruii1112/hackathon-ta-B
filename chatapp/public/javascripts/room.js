@@ -18,3 +18,16 @@ function sort(){
         $('#room-sort_button').val('古い順');
     }
 }
+
+//一時休止関数
+function rest(){
+    let text = document.getElementsByClassName('rest')[0];
+    text.innerHTML = '<input type="button" value="再開" class="common-button room-rest_button" onclick="resume();">';
+    socket.disconnect();
+}
+
+function resume(){
+    let text = document.getElementsByClassName('rest')[0];
+    text.innerHTML = '<input type="button" value="一時休止" class="common-button room-rest_button" onclick="rest();">';
+    socket.connect();
+}

@@ -1,8 +1,9 @@
 'use strict';
 
-let flag = 0;
-let publish_time = 0;
+let flag = 0;   // 連続投稿確認のためのflag flag=1:前の投稿が自分（投稿不可） flag=0:前の投稿が自分以外（投稿可能）
+let publish_time = 0;   // 前回投稿した時間
 let cnt_message = 0;
+
 // ユーザ名取得関数
 function getUserName(){
     const userName = $('#userName').val();

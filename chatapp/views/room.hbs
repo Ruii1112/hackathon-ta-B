@@ -4,6 +4,9 @@
     </div>
     <div class="row">
         <form method="post" action="/">
+            <div class="rest">
+                <input type="button" value="一時休止" class="common-button room-rest_button" id="room-rest_button" onclick="rest();">
+            </div>
             <div class="room-login_user">
                 ログインユーザ：{{userName}}さん
                 <input id="userName" type="hidden" value="{{userName}}">
