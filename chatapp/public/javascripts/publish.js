@@ -2,7 +2,7 @@
 
 let flag = 0;
 let publish_time = 0;
-
+let cnt_message = 0;
 // ユーザ名取得関数
 function getUserName(){
     const userName = $('#userName').val();
@@ -41,20 +41,29 @@ function publish() {
     }
 }
 
+function delete_msg(msg){
+    // $(`#${msg.id}`).remove();
+    socket.emit('deleteMessage', msg.id);
+}
+
+socket.on('deleteMessageEvent',function(data){
+     $(`#${data}`).remove();
+});
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvent', function (data) {
+    cnt_message += 1;
     if ($('#room-sort_button').val() === '古い順'){
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
+            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + cnt_message +' onclick="delete_msg(this)">削除</input></p>');
         }else{
-            $('#thread').prepend('<p>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
             flag = 0;
         }
     }else {
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
+            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
         }else{
-            $('#thread').prepend('<p>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
             flag = 0;
         }
     }

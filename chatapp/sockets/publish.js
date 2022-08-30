@@ -5,4 +5,7 @@ module.exports = function (socket, io) {
     socket.on('sendMessageEvent', function (data) {
         io.sockets.emit('receiveMessageEvent', data);
     });
+    socket.on('deleteMessage', function (data) {
+        io.sockets.emit('deleteMessageEvent', data);
+    });
 };
