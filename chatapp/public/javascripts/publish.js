@@ -9,7 +9,13 @@ function getUserName(){
 // 入力されたメッセージ内容の取得関数
 function getMessage(){
     const message = $('#message').val();
-    return message
+    const check = message.replace(/\s+/g, '');
+    if(check === ''){
+        alert("空では投稿できません。");
+    }else{
+        return message
+    }
+    
 }
 
 // 投稿メッセージをサーバに送信する
