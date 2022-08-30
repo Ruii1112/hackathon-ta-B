@@ -14,3 +14,15 @@ socket.emit('sendEnterEvent', userName);
 socket.on('receiveEnterEvent', function (data) {
     $('#thread').prepend('<p>' +  data + 'さんが入室しました' + '</p>');
 });
+
+
+
+let form = document.getElementById('message');
+form.addEventListener('keypress', event_key);
+function event_key(e) {
+  	if (e.keyCode === 13 && e.shiftKey === true) {
+        publish();
+	}  
+		return false;
+}
+
