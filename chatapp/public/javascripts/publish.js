@@ -1,5 +1,7 @@
 'use strict';
 
+let flag = 0;
+
 // ユーザ名取得関数
 function getUserName(){
     const userName = $('#userName').val();
@@ -24,7 +26,12 @@ function publish() {
     }else{
         $('#message').val('');
         // 投稿内容を送信
-        socket.emit('sendMessageEvent', [userName,message]);
+        if(flag === 0){
+            socket.emit('sendMessageEvent', [userName,message]);
+            flag = 1;
+        }else{
+            alert("連続の投稿はできません。")
+        }
     }
 }
 
@@ -35,12 +42,14 @@ socket.on('receiveMessageEvent', function (data) {
             $('#thread').prepend('<p>' + data[0] + 'さん：' + '<b>' + data[1] + '</b></p>');
         }else{
             $('#thread').prepend('<p>' + data[0] + 'さん：' + data[1] + '</p>');
+            flag = 0;
         }
     }else {
         if(data[0] === getUserName()){
             $('#thread').append('<p>' + data[0] + 'さん：' + '<b>' + data[1] + '</b></p>');
         }else{
             $('#thread').append('<p>' + data[0] + 'さん：' + data[1] + '</p>');
+            flag = 0;
         }
     }
 
