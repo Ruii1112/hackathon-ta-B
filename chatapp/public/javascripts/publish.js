@@ -1,6 +1,7 @@
 'use strict';
 
 let flag = 0;
+let time = 0;
 
 // ユーザ名取得関数
 function getUserName(){
@@ -25,12 +26,16 @@ function publish() {
         alert("空では投稿できません。");
     }else{
         $('#message').val('');
+        let now = new Date();
         // 投稿内容を送信
-        if(flag === 0){
+        if(flag === 0 && (time === 0 || now.getTime() - time.getTime() > 60000)){
             socket.emit('sendMessageEvent', [userName,message]);
             flag = 1;
+            time = new Date();
+        }else if(flag === 1){
+            alert("連続の投稿はできません。");
         }else{
-            alert("連続の投稿はできません。")
+            alert("1分経ってから投稿してください。");  
         }
     }
 }
