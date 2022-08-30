@@ -54,7 +54,7 @@ socket.on('receiveMessageEvent', function (data) {
     cnt_message += 1;
     if ($('#room-sort_button').val() === '古い順'){
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + cnt_message +' onclick="delete_msg(this)">削除</input></p>');
+            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + cnt_message +' onclick="delete_msg(this)" value="削除"/></p>');
         }else{
             $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
             flag = 0;
