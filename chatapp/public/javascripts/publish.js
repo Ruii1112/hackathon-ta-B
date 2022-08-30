@@ -31,15 +31,18 @@ function publish() {
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvent', function (data) {
     if ($('#room-sort_button').val() === '古い順'){
-        $('#thread').prepend('<p>' + data + '</p>');
+        if(data[0] === getUserName()){
+            $('#thread').prepend('<p>' + data[0] + 'さん：' + '<b>' + data[1] + '</b></p>');
+        }else{
+            $('#thread').prepend('<p>' + data[0] + 'さん：' + data[1] + '</p>');
+        }
     }else {
-        $('#thread').append('<p>' + data + '</p>');
+        if(data[0] === getUserName()){
+            $('#thread').append('<p>' + data[0] + 'さん：' + '<b>' + data[1] + '</b></p>');
+        }else{
+            $('#thread').append('<p>' + data[0] + 'さん：' + data[1] + '</p>');
+        }
     }
-    
 
-    if(data[0] === getUserName()){
-        $('#thread').prepend('<p>' + data[0] + 'さん：' + '<b>' + data[1] + '</b></p>');
-    }else{
-        $('#thread').prepend('<p>' + data[0] + 'さん：' + data[1] + '</p>');
-    }
+    
 });

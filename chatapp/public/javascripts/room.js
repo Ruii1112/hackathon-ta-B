@@ -4,11 +4,11 @@
 function sort(){
     //投稿のソート
     const publish_html = document.getElementById('thread');
-    let string = publish_html.innerText;
-    let publish_list = string.split('\n\n');
+    let string = publish_html.innerHTML;
+    let publish_list = string.split('</p>');
     document.querySelector('#thread').innerHTML = '';
     for(let i = 0 ; i < publish_list.length ; i++){
-        $('#thread').prepend('<p>' + publish_list[i] + '</p>');
+        $('#thread').prepend(publish_list[i] + '</p>');
     }
     //ボタンの表示切り替え
     const btn_value = $('#room-sort_button').val();
