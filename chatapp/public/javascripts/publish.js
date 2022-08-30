@@ -27,13 +27,12 @@ function publish() {
         $('#message').val('');
         // 投稿内容を送信
         if(flag === 0){
-            socket.emit('sendMessageEvent', [userName,message]);
+            const today = `[${time.getMonth()+1}月${time.getDay()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
+            socket.emit('sendMessageEvent', [userName,message,today]);
             flag = 1;
         }else{
             alert("連続の投稿はできません。")
         }
-        const today = `[${time.getMonth()+1}月${time.getDay()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
-        socket.emit('sendMessageEvent', [userName,message,today]);
     }
 }
 
