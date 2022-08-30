@@ -24,11 +24,15 @@ function publish() {
     }else{
         $('#message').val('');
         // 投稿内容を送信
-        socket.emit('sendMessageEvent', userName + 'さん: ' + message);
+        socket.emit('sendMessageEvent', [userName,message]);
     }
 }
 
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvent', function (data) {
-    $('#thread').prepend('<p>' + data + '</p>');
+    if(data[0] === getUserName()){
+        $('#thread').prepend('<p>' + data[0] + 'さん：' + '<b>' + data[1] + '</b></p>');
+    }else{
+        $('#thread').prepend('<p>' + data[0] + 'さん：' + data[1] + '</p>');
+    }
 });
