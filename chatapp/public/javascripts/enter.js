@@ -21,7 +21,8 @@ let form = document.getElementById('message');
 form.addEventListener('keypress', event_key);
 function event_key(e) {
   	if (e.keyCode === 13 && e.shiftKey === true) {
-        publish();
+        e.preventDefault();
+        document.getElementById("room-publish_button").click();
 	}  
 		return false;
 }
