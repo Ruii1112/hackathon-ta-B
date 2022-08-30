@@ -1,7 +1,7 @@
 'use strict';
 
 let flag = 0;
-let time = 0;
+let publish_time = 0;
 
 // ユーザ名取得関数
 function getUserName(){
@@ -28,11 +28,11 @@ function publish() {
         $('#message').val('');
         let now = new Date();
         // 投稿内容を送信
-        if(flag === 0 && (time === 0 || now.getTime() - time.getTime() > 60000)){
+        if(flag === 0 && (publish_time === 0 || now.getTime() - publish_time.getTime() > 60000)){
             const today = `[${time.getMonth()+1}月${time.getDay()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
             socket.emit('sendMessageEvent', [userName,message,today]);
             flag = 1;
-            time = new Date();
+            publish_time = new Date();
         }else if(flag === 1){
             alert("連続の投稿はできません。");
         }else{
