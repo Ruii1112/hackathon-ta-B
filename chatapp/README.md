@@ -12,6 +12,8 @@ hackathon-chatapp
     cd ~/hackathon/chatapp
     # アプリの開発で使用するライブラリをインストール（初回のみ）
     npm install
+    # アプリでデータベースを使用するためsqlite3をインストール（初回のみ）
+    npm install sqlite3
     # 起動コマンドを実行
     npm start
     ```
