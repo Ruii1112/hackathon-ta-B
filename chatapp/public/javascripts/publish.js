@@ -52,19 +52,18 @@ socket.on('deleteMessageEvent',function(data){
 });
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvent', function (data) {
-    cnt_message += 1;
     if ($('#room-sort_button').val() === '古い順'){
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + cnt_message +' onclick="delete_msg(this)" value="削除"/></p>');
+            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + data[3] +' onclick="delete_msg(this)" value="削除"/></p>');
         }else{
-            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
             flag = 0;
         }
     }else {
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
+            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
         }else{
-            $('#thread').prepend('<p id=' + cnt_message + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
             flag = 0;
         }
     }
