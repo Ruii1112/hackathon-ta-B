@@ -1,4 +1,5 @@
 'use strict';
+
 function getUserName(){
     const userName = $('#userName').val();
     // console(userName);
@@ -12,6 +13,14 @@ function enter() {
     if (userName === ""){
         alert("ユーザ名を入力してください");
     }else{
-        $('form').submit();
+        socket.emit('userNameJudge', userName);
+        socket.on('receiveUserJudege', function(data){
+            if (data === 1){
+                alert("このユーザー名は使われています");
+            }else if(data === 0){
+                $('form').submit();
+            }
+        })
     }
 }
+

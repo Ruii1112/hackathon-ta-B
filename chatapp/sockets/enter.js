@@ -24,4 +24,19 @@ module.exports = function (socket) {
             db.run('insert into users values(' + id++ + ', "' + data + '")')
         });
     });
+
+    socket.on('userNameJudge', function(data){
+        let check = 0;
+        db.all("select * from users", (err, row) => {
+            if (err) {
+                console.error(err.message);
+            }
+            row.forEach(person => {
+                if (data === person.name){
+                    check = 1;
+                }
+            })
+            socket.emit('receiveUserJudege', check);
+        });
+    });
 };

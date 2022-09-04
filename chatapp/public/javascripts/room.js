@@ -26,6 +26,7 @@ function rest(){
     socket.disconnect();
 }
 
+//再開関数
 function resume(){
     let text = document.getElementsByClassName('rest')[0];
     text.innerHTML = '<input type="button" value="一時休止" class="common-button room-rest_button" onclick="rest();">';

@@ -22,8 +22,7 @@ socket.on('receiveEnterEvent', function (data) {
     $('#users').append('<p id=list' + data[1] + data[0] + '>' + data[1] + '</p>');
 });
 
-
-
+//Shift+Enterで投稿
 let form = document.getElementById('message');
 form.addEventListener('keypress', event_key);
 function event_key(e) {
