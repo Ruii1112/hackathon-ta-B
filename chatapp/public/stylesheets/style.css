@@ -17,6 +17,19 @@ div {
     margin: 20px;
 }
 
+.users {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.main {
+    display: inline-block;
+    vertical-align: top;
+}
+
 /*
  * ボタンの共通設定
  */

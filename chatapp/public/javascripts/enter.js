@@ -10,9 +10,16 @@ const userName = getUserName();
 // 入室メッセージイベントを送信する
 socket.emit('sendEnterEvent', userName);
 
+socket.on('makeUserListEvent', function (data) {
+    $('#users').prepend(data);
+    $('#users').prepend('<p>' + userName + '(自分)</p>');
+})
+
 // サーバから受信した入室メッセージを画面上に表示する
 socket.on('receiveEnterEvent', function (data) {
-    $('#thread').prepend('<p>' +  data + 'さんが入室しました' + '</p>');
+    // data[0] = id, data[1] = name
+    $('#thread').prepend('<p>' + data[1] + 'さんが入室しました' + '</p>');
+    $('#users').append('<p id=list' + data[1] + data[0] + '>' + data[1] + '</p>');
 });
 
 

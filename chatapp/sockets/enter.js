@@ -10,7 +10,18 @@ let id = 0;
 module.exports = function (socket) {
     // 入室メッセージをクライアントに送信する
     socket.on('sendEnterEvent', function (data) {
-        db.run('insert into users values(' + id++ + ', "' + data + '")')
-        socket.broadcast.emit('receiveEnterEvent', data);
+        socket.broadcast.emit('receiveEnterEvent', [id, data]);
+        socket.emit('sendIdEvent', id);
+        db.all("select * from users", (err, row) => {
+            if (err) {
+                console.error(err.message);
+            }
+            let userList = "";
+            row.forEach(person => {
+                userList += "<p id=list" + person.name + person.id + ">" + person.name + "</p>";
+            });
+            socket.emit('makeUserListEvent', userList)
+            db.run('insert into users values(' + id++ + ', "' + data + '")')
+        });
     });
 };
