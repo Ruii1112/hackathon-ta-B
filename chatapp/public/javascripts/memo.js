@@ -7,18 +7,25 @@ function getMemo(){
 }
 
 //　ユーザ名の取得関数
-function getName(){
-    const name = $('#userName').val();
-    return name
-}
+// function getName(){
+//     const name = $('#userName').val();
+//     return name
+// }
 
 // メモを画面上に表示する
 function memo() {
     // ユーザ名を取得
-    const userName = getName();
+    // const userName = getName();
     // 入力されたメッセージを取得
     const message = getMemo();
-    // メモの内容を表示
-    $('#thread').prepend('<p>' + userName + 'さんのメモ: ' + message +'</p>');
-    $('#message').val('');
+    const time = new Date();
+    const today = `[${time.getMonth()+1}月${time.getDay()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
+
+    const check = message.replace(/\s+/g, '');
+    if (check === '') {
+        alert('空では投稿できません');
+    } else {
+        $('#thread').prepend('<p>自分へのメモ: ' + today + '<br>><b>' + message.replace(/\n+/g,'<br>&nbsp;') +'</p>');
+        $('#message').val('');
+    }
 }

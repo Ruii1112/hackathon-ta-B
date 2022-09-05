@@ -12,7 +12,7 @@ function getUserName(){
 
 // 入力されたメッセージ内容の取得関数
 function getMessage(){
-    const message = $('#message').val().replace(/\n+/g,'<br>&nbsp;');
+    const message = $('#message').val();
     return message
 }
 // 投稿メッセージをサーバに送信する
@@ -31,7 +31,7 @@ function publish() {
         // 投稿内容を送信
         if(flag === 0 && (publish_time === 0 || now.getTime() - publish_time.getTime() > 60000)){
             const today = `[${time.getMonth()+1}月${time.getDay()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
-            socket.emit('sendMessageEvent', [userName,message,today]);
+            socket.emit('sendMessageEvent', [userName,message.replace(/\n+/g,'<br>&nbsp;'),today]);
             flag = 1;
             publish_time = new Date();
         }else if(flag === 1){
