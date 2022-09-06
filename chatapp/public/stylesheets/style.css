@@ -145,5 +145,8 @@ div {
     .card{
         width: 30rem;
     }
+    img{
+        width: 100%;
+    }
 }
 
