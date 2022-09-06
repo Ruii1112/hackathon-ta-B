@@ -1,15 +1,15 @@
 <div class="login">
-    <div class="container card d-flex align-items-center">
+    <div class="container card">
         <div class="row">
-            <h1><img class="card-img-top" src="./images/rakus_logo.png" alt="ログイン"/></h1>
+            <h1 class="card-title"><img class="card-img-top" src="./images/rakus_logo.png" alt="ログイン"/></h1>
         </div>
         <div class="row">
             <form method="post" action="/room">
                 <div class="index-user_name card-text">
-                    <input type="text" id="userName" name="userName" class="index-user_name_text col-md" placeholder="UserName">
+                    <input type="text" id="userName" name="userName" class="index-user_name_text card-text form-control" placeholder="UserName">
                 </div>
                 <div class="index-enter card-text">
-                    <input type="button" value="入室する" class="index-enter_button btn btn-primary col-md" onclick="enter();">
+                    <input type="button" value="入室する" class="index-enter_button btn btn-primary card-text form-control" onclick="enter();">
                 </div>
             </form>
         </div>
