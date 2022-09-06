@@ -29,7 +29,7 @@ div {
  * ボタンの共通設定
  */
 .common-button {
-
+    width: 500px;
 }
 
 /*
@@ -78,9 +78,9 @@ div {
     padding-left: 10px;
     height: 100vh;
     overflow-y: auto;
-    border-bottom:solid;
-    border-color:#f39800;
-    border-width:3px;
+    text-decoration:underline;
+    text-decoration-color:#f39800;
+    text-decoration-thickness: 3px;
  }
 
  .username{
