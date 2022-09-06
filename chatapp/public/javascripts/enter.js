@@ -12,7 +12,7 @@ socket.emit('sendEnterEvent', userName);
 
 socket.on('makeUserListEvent', function (data) {
     $('#users').prepend(data);
-    $('#users').prepend('<p>' + userName + '(自分)</p>');
+    $('#users').prepend('<p class="username">' + userName + '(自分)</p>');
 })
 
 // サーバから受信した入室メッセージを画面上に表示する

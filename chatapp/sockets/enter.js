@@ -18,7 +18,7 @@ module.exports = function (socket) {
             }
             let userList = "";
             row.forEach(person => {
-                userList += "<p id=list" + person.name + person.id + ">" + person.name + "</p>";
+                userList += "<p class ='username' id=list" + person.name + person.id + ">" + person.name + "</p>";
             });
             socket.emit('makeUserListEvent', userList)
             db.run('insert into users values(' + id++ + ', "' + data + '")')

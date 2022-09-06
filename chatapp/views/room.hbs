@@ -1,4 +1,4 @@
-<div class="container2">
+<div class="container-fluid">
     <div class="row">
         <div class="title_logo">
             <img
@@ -7,9 +7,11 @@
             />
         </div>
     </div>
-    <div class="users">
-        <p>ユーザー一覧</p>
-        <div id="users"></div>
+    <div class="login-users">
+        <div class="userlist">
+            <a style="font-weight: 700;">ユーザー一覧</a>
+        </div>
+        <div class="users" id="users"></div>
     </div>
     <div class="main">
         <form method="post" action="/">
@@ -38,6 +40,7 @@
             </div>
         </form>
     </div>
+    </div>
 </div>
 
 <script src="/javascripts/socket.js"></script>
@@ -46,3 +49,46 @@
 <script src="/javascripts/memo.js"></script>
 <script src="/javascripts/exit.js"></script>
 <script src="/javascripts/room.js"></script>
+
+
+
+
+{{!-- <div class="row">
+    <div class="col">
+        <div class="login-users">
+            <div class="userlist">
+                <a style="font-weight: 700;">ユーザー一覧</a>
+            </div>
+            <div class="users" id="users"></div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="main">
+            <form method="post" action="/">
+                <div class="rest">
+                    <input type="button" value="一時休止" class="common-button room-rest_button" id="room-rest_button" onclick="rest();">
+                </div>
+                <div class="room-login_user">
+                    ログインユーザ：{{userName}}さん
+                    <input id="userName" type="hidden" value="{{userName}}">
+                </div>
+                <div class="room-message">
+                    <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください"></textarea>
+                </div>
+                <div class="room-submit">
+                    <input type="button" value="投稿" class="common-button room-publish_button" id="room-publish_button" onclick="publish();">
+                    <input type="button" value="メモ" class="common-button room-memo_button" id="room-memo_button" onclick="memo();">
+                </div>
+                <div class="sort">
+                    <input type="button" value="古い順" class="common-button room-sort_button" id="room-sort_button" onclick="sort();">
+                </div>
+                <div class="room-thread">
+                    <div id="thread"></div>
+                </div>
+                <div class="room-exit">
+                    <input type="button" value="退室する" class="common-button room-exit_button" onclick="exit();">
+                </div>
+            </form>
+        </div>
+    </div> 
+</div> --}}
