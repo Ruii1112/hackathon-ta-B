@@ -18,8 +18,15 @@ socket.on('makeUserListEvent', function (data) {
 // サーバから受信した入室メッセージを画面上に表示する
 socket.on('receiveEnterEvent', function (data) {
     // data[0] = id, data[1] = name
-    $('#thread').prepend('<p>' + data[1] + 'さんが入室しました' + '</p>');
+    let enterTime = new Date();
+    const enterTimeMessage = `[${enterTime.getMonth()+1}月${enterTime.getDate()}日${enterTime.getHours()}時${enterTime.getMinutes()}分${enterTime.getSeconds()}秒]`
     $('#users').append('<p id=list' + data[1] + data[0] + '>' + data[1] + '</p>');
+    if ($('#room-sort_button').val() === '古い順'){
+        $('#thread').prepend('<p>' + data[1] + 'さんが入室しました' + enterTimeMessage + '</p>');
+    }else{
+        $('#thread').append('<p>' + data[1] + 'さんが入室しました' + enterTimeMessage + '</p>');
+    }
+
 });
 
 //Shift+Enterで投稿

@@ -24,6 +24,13 @@ function exit() {
 
 // サーバから受信した退室メッセージを画面上に表示する
 socket.on('receiveExitEvent', function (data) {
-    $('#thread').prepend('<p>' + data[1] + 'さんが退室しました' + '</p>');
+    let exitTime = new Date();
+    const exitTimeMessage = `[${exitTime.getMonth()+1}月${exitTime.getDate()}日${exitTime.getHours()}時${exitTime.getMinutes()}分${exitTime.getSeconds()}秒]`
     $(`#list${data[1] + data[0]}`).remove();
+    if ($('#room-sort_button').val() === '古い順'){
+        $('#thread').prepend('<p>' + data[1] + 'さんが退室しました' + exitTimeMessage + '</p>');
+    }else{
+        $('#thread').append('<p>' + data[1] + 'さんが退室しました' + exitTimeMessage + '</p>');
+    }
+
 });

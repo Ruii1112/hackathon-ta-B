@@ -30,7 +30,7 @@ function publish() {
         let now = new Date();
         // 投稿内容を送信
         if(flag === 0 && (publish_time === 0 || now.getTime() - publish_time.getTime() > 60000)){
-            const today = `[${time.getMonth()+1}月${time.getDay()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
+            const today = `[${time.getMonth()+1}月${time.getDate()}日${time.getHours()}時${time.getMinutes()}分${time.getSeconds()}秒]`
             socket.emit('sendMessageEvent', [userName,message.replace(/\n+/g,'<br>&nbsp;'),today]);
             flag = 1;
             publish_time = new Date();
@@ -61,9 +61,9 @@ socket.on('receiveMessageEvent', function (data) {
         }
     }else {
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
+            $('#thread').append('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
         }else{
-            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').append('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
             flag = 0;
         }
     }
