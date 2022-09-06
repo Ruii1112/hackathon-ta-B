@@ -94,3 +94,24 @@ div {
 .room-exit_button {
 
 }
+
+.login{
+    background-color: #f29800;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.card{
+    width: 30rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .login {
+        padding-top: 60%;
+        padding-bottom: 100%;
+    }
+    .card{
+        width: 30rem;
+    }
+}
+
