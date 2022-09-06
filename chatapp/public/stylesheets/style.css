@@ -4,6 +4,12 @@
 body {
     font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, sans-serif;
 }
+.container2{
+    width: 100%;
+    background-color: #fff3e0;
+    margin: 0;
+    padding: 0;
+}
 
 a {
     color: #00B7FF;
@@ -14,7 +20,8 @@ div {
 }
 
 .row {
-    margin: 20px;
+    margin: 0;
+    background-color: #f300e0;
 }
 
 .users {
