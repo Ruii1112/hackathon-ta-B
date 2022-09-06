@@ -4,6 +4,12 @@
 body {
     font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, sans-serif;
 }
+.container-fluid{
+    width: 100%;
+    background-color: #fff3e0;
+    margin: 0;
+    padding: 0;
+}
 
 a {
     color: #00B7FF;
@@ -14,20 +20,9 @@ div {
 }
 
 .row {
-    margin: 20px;
-}
-
-.users {
-    display: inline-block;
-    vertical-align: top;
-    padding: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.main {
-    display: inline-block;
-    vertical-align: top;
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
 }
 
 /*
@@ -59,11 +54,48 @@ div {
 /*
  * チャットルーム画面（room.hbs）に関する設定
  */
-.room-login_user {
 
+ .login-users{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+ }
+.room-login_user {
+ }
+ .userlist{
+    background-color: #fcdca4;
+    margin: 0;
+    padding: 20px;
+    color: #242424;
  }
 
-.room-message {
+ .users{
+    background-color: #ececec;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 100vh;
+    overflow-y: auto;
+    border-bottom:solid;
+    border-color:#f39800;
+    border-width:3px;
+ }
+
+ .username{
+    margin: 0;
+    padding: 10px;
+ }
+ .main {
+    display: inline-block;
+    vertical-align: top;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vh;
+}
+
+.room-message{
 
 }
 
