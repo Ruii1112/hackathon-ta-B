@@ -89,8 +89,8 @@ div {
     height: 50vh;
     width: 50vw;
     position: absolute;
-    top: 25%;
-    left: 25%;
+    top: 10vh;
+    left: 25vw;
 }
 
 @media screen and (max-width: 500px) {
