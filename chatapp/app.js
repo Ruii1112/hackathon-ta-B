@@ -11,6 +11,14 @@ const routes = require('./routes/index');
 
 const app = express();
 
+const sqlite3 = require("sqlite3");
+const db = new sqlite3.Database("./db/database.db");
+db.serialize(() => {
+  db.run('create table if not exists users(id integer, name text)');
+  db.run('delete from users');
+})
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
