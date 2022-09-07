@@ -5,6 +5,7 @@
                 <img
                 src="/images/rakus_logo.png"
                 alt="トップ画像"
+                style="max-width: 100%;"
                 />
             </div>
         </div>
@@ -27,7 +28,7 @@
                         </div>
                         <div class="col-md-5">
                             <div class="rest">
-                                <input type="button" value="一時休止" class="common-button room-rest_button" id="room-rest_button" onclick="rest();">
+                                <input type="button" value="一時休止" class="common-button room-rest_button btn btn-primary card-text form-control" id="room-rest_button" onclick="rest();">
                             </div>
                             <div class="room-login_user">
                                 ログインユーザ：{{userName}}さん
@@ -38,18 +39,18 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <input type="button" value="投稿" class="common-button room-publish_button" id="room-publish_button" onclick="publish();">
+                                    <input type="button" value="投稿" class="common-button room-publish_button btn btn-primary card-text form-control" id="room-publish_button" onclick="publish();">
                                 </div>
                                 <div class="col">
-                                    <input type="button" value="メモ" class="common-button room-memo_button" id="room-memo_button" onclick="memo();">
+                                    <input type="button" value="メモ" class="common-button room-memo_button btn btn-primary card-text form-control" id="room-memo_button" onclick="memo();">
                                 </div>
                             </div>
                             <div class="sort">
-                                <input type="button" value="古い順" class="common-button room-sort_button" id="room-sort_button" onclick="sort();">
+                                <input type="button" value="古い順" class="common-button room-sort_button btn btn-primary card-text form-control" id="room-sort_button" onclick="sort();">
                             </div>
 
                             <div class="room-exit">
-                                <input type="button" value="退室する" class="common-button room-exit_button" onclick="exit();">
+                                <input type="button" value="退室する" class="common-button room-exit_button btn btn-primary card-text form-control" onclick="exit();">
                             </div>
                         </div>
                     </div>
