@@ -101,7 +101,7 @@ div {
     left: 25vw;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 980px) {
     .card {
         height: 30vh;
         width: 70vw;
