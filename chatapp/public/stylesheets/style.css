@@ -16,7 +16,7 @@ a {
 }
 
 div {
-    margin: 20px 0px;
+    margin: 0px 0px;
 }
 
 .row {
@@ -25,11 +25,18 @@ div {
     background-color: #fff;
 }
 
+.col {
+    margin: 0%;
+    padding: 0%;
+}
+
 /*
  * ボタンの共通設定
  */
 .common-button {
     width: 100%;
+    margin: 0%;
+    padding: 0%;
 }
 
 /*
@@ -211,3 +218,48 @@ div {
 
 }
 
+.col-md-7 {
+    padding: 0%;
+    margin: 0%;
+    border: 1px solid #fff3e0;
+    height: 100%;
+}
+
+.col-md-5 {
+    padding: 1%;
+    margin: 0%;
+    border: 1px solid #fff3e0;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .col-md-7 {
+        padding: 0%;
+        margin: 0%;
+        border: 1px solid #fff3e0;
+        height: 100%;
+    }
+
+    .col-md-5 {
+        padding: 1%;
+        margin: 0%;
+        border: 1px solid #fff3e0;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-md-7 {
+        padding: 0%;
+        margin: 0%;
+        border: 1px solid #fff3e0;
+        height: 75%;
+    }
+
+    .col-md-5 {
+        padding: 1%;
+        margin: 0%;
+        border: 1px solid #fff3e0;
+        height: 25%;
+    }
+}

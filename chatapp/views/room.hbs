@@ -20,12 +20,12 @@
             <div class="col-10" style="padding: 0%; margin: 0%; background-color: #fff; border: 1px solid #fff3e0; height: 100%;">
                 <form method="post" action="/" style="height: 100%; padding: 0%; margin: 0%;">
                     <div class="row" style="height: 100%; padding: 0%; margin: 0%;">
-                        <div class="col-md-7" style="padding: 0%; margin: 0%; background-color: #fff; border: 1px solid #fff3e0; height: 100%;">
+                        <div class="col-md-7">
                             <div class="room-thread">
                                 <div id="thread" style="height: 100%;"></div>
                             </div>
                         </div>
-                        <div class="col-md-5" style="padding: 1%; margin: 0%; background-color: #fff; border: 1px solid #fff3e0; height: 100%;">
+                        <div class="col-md-5">
                             <div class="rest">
                                 <input type="button" value="一時休止" class="common-button room-rest_button" id="room-rest_button" onclick="rest();">
                             </div>
@@ -36,9 +36,13 @@
                             <div class="room-message">
                                 <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください"></textarea>
                             </div>
-                            <div class="room-submit">
-                                <input type="button" value="投稿" class="common-button room-publish_button" id="room-publish_button" onclick="publish();">
-                                <input type="button" value="メモ" class="common-button room-memo_button" id="room-memo_button" onclick="memo();">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="button" value="投稿" class="common-button room-publish_button" id="room-publish_button" onclick="publish();">
+                                </div>
+                                <div class="col">
+                                    <input type="button" value="メモ" class="common-button room-memo_button" id="room-memo_button" onclick="memo();">
+                                </div>
                             </div>
                             <div class="sort">
                                 <input type="button" value="古い順" class="common-button room-sort_button" id="room-sort_button" onclick="sort();">
