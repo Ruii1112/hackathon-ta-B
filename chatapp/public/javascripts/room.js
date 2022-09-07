@@ -22,13 +22,13 @@ function sort(){
 //一時休止関数
 function rest(){
     let text = document.getElementsByClassName('rest')[0];
-    text.innerHTML = '<input type="button" value="再開" class="common-button room-rest_button" onclick="resume();">';
+    text.innerHTML = '<input type="button" value="再開" class="common-button room-rest_button btn btn-primary card-text form-control" onclick="resume();">';
     socket.disconnect();
 }
 
 //再開関数
 function resume(){
     let text = document.getElementsByClassName('rest')[0];
-    text.innerHTML = '<input type="button" value="一時休止" class="common-button room-rest_button" onclick="rest();">';
+    text.innerHTML = '<input type="button" value="一時休止" class="common-button room-rest_button btn btn-primary card-text form-control" onclick="rest();">';
     socket.connect();
 }
