@@ -238,13 +238,6 @@ div {
 }
 
 @media screen and (min-width: 768px) {
-    .col-md-7 {
-        padding: 0%;
-        margin: 0%;
-        border: 1px solid #fff3e0;
-        height: 100%;
-    }
-
     .col-md-5 {
         padding: 1%;
         margin: 0%;
@@ -259,9 +252,7 @@ div {
 }
 
 @media screen and (max-width: 768px) {
-    .col-md-7 {
-        padding: 0%;
-        margin: 0%;
+    .room-thread {
         border: 1px solid #fff3e0;
         height: 75%;
     }
@@ -275,5 +266,13 @@ div {
 
     .room-message {
         height: auto;
+    }
+
+    .room-user_list {
+        display: none;
+    }
+
+    .room-main {
+        width: 100vw;
     }
 }
