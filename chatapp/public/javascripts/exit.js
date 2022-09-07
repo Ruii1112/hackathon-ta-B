@@ -28,9 +28,9 @@ socket.on('receiveExitEvent', function (data) {
     const exitTimeMessage = `[${exitTime.getMonth()+1}月${exitTime.getDate()}日${exitTime.getHours()}時${exitTime.getMinutes()}分${exitTime.getSeconds()}秒]`
     $(`#list${data[1] + data[0]}`).remove();
     if ($('#room-sort_button').val() === '古い順'){
-        $('#thread').prepend('<p>' + data[1] + 'さんが退室しました' + exitTimeMessage + '</p>');
+        $('#thread').prepend('<p style="color: #666666;">' + data[1] + 'さんが退室しました' + exitTimeMessage + '</p>');
     }else{
-        $('#thread').append('<p>' + data[1] + 'さんが退室しました' + exitTimeMessage + '</p>');
+        $('#thread').append('<p style="color: #666666;">' + data[1] + 'さんが退室しました' + exitTimeMessage + '</p>');
     }
 
 });

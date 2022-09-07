@@ -128,6 +128,10 @@ div {
  * チャットルーム画面（room.hbs）に関する設定
  */
 
+ .title_logo {
+    margin: auto 2%;
+ }
+
  .login-users{
     vertical-align: top;
     padding: 0;
@@ -137,23 +141,24 @@ div {
 .room-login_user {
  }
  .userlist{
-    background-color: #fcdca4;
+    background-color: #fff;
     margin: 0;
     padding: 10px 20px;
     color: #242424;
     text-align: center;
     font-size: large;
+    overflow-y: auto;
  }
 
  .users{
-    background-color: #ececec;
+    background-color: #fff;
     margin: 0;
     padding-top: 10px;
     padding-left: 10px;
-    height: 100vh;
     overflow-y: auto;
+    /* height: 100vh;
     text-decoration:underline;
-    text-decoration-color:#f39800;
+    text-decoration-color:#f39800; */
     text-decoration-thickness: 3px;
  }
 
@@ -161,13 +166,14 @@ div {
     margin: 0;
     padding: 10px;
  }
+
  .main {
     vertical-align: top;
     overflow-y: auto;
     padding: 0%;
     margin: 0%;
-    height: 100vh;
-    width: 100vh;
+    /*height: 100vh;
+    width: 100vh; */
 }
 
 .room-message{
