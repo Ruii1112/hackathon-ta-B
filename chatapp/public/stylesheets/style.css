@@ -254,14 +254,14 @@ div {
 @media screen and (max-width: 768px) {
     .room-thread {
         border: 1px solid #fff3e0;
-        height: 75%;
+        height: 65%;
     }
 
     .col-md-5 {
         padding: 1%;
         margin: 0%;
         border: 1px solid #fff3e0;
-        height: 25%;
+        height: 35%;
     }
 
     .room-message {
