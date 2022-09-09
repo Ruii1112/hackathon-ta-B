@@ -256,6 +256,10 @@ div {
     display: none;
 }
 
+.room-close_users_button {
+    display: none;
+}
+
  .main {
     vertical-align: top;
     overflow-y: auto;
@@ -375,6 +379,7 @@ div {
     }
 
     .room-close_users_button {
+        display: inline-block;
         z-index: 3;
         position: absolute;
         background-color: #f39800;
