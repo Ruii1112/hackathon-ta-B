@@ -154,6 +154,10 @@ div {
 /*
  * チャットルーム画面（room.hbs）に関する設定
  */
+.room {
+    height: 100vh;
+    z-index: 0;
+}
 
 .thread-message {
     position: relative;
@@ -198,12 +202,24 @@ div {
     margin: auto 2%;
  }
 
+.room-open_users_button {
+    display: none;
+}
+
+ .room-user_list {
+    padding: 0%;
+    margin: 0%;
+    border: 1px solid #fff3e0;
+    height: 100%;
+ }
+
  .login-users{
     vertical-align: top;
     padding: 0;
     margin: 0;
  }
 .room-login_user {
+    display: inline-block;
  }
  .userlist{
     margin: 0;
@@ -235,6 +251,10 @@ div {
     padding: 10px;
     color: #000;
  }
+
+.room-md-userList_bg {
+    display: none;
+}
 
  .main {
     vertical-align: top;
@@ -327,7 +347,51 @@ div {
     }
 
     .room-user_list {
-        display: none;
+        visibility: hidden;
+        position: absolute;
+        z-index: 2;
+        margin: 20% 25%;
+        height: 60%;
+        width: 50%;
+    }
+
+    .room-md-userList_bg {
+        visibility: hidden;
+        z-index: 1;
+        display: block;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .room-open_users_button {
+        display: inline-block;
+        width: fit-content;
+        margin-left: 5% 5% 5% auto;
+        padding: 2%;
+    }
+
+    .room-close_users_button {
+        z-index: 3;
+        position: absolute;
+        background-color: #f39800;
+        border: 1px solid #fff;
+        font-weight: bold;
+        width: fit-content;
+        padding: 1% 2%;
+        right: 0%;
+        top: 0%;
+    }
+
+    .md-visible {
+        visibility: visible;
+    } 
+
+    .md-hidden {
+        visibility: hidden;
     }
 
     .room-main {

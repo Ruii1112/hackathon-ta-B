@@ -32,3 +32,13 @@ function resume(){
     text.innerHTML = '<input type="button" value="一時休止" class="common-button room-rest_button btn btn-primary card-text form-control" onclick="rest();">';
     socket.connect();
 }
+
+function open_users() {
+    document.getElementById('room-user_list').className = "col-md-2 room-user_list md-visible";
+    document.getElementById('room-md-userList_bg').className = "room-md-userList_bg md-visible";
+}
+
+function close_users() {
+    document.getElementById('room-user_list').className = "col-md-2 room-user_list md-hidden";
+    document.getElementById('room-md-userList_bg').className = "room-md-userList_bg md-hidden";
+}
