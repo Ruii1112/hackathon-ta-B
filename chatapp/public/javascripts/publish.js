@@ -54,16 +54,16 @@ socket.on('deleteMessageEvent',function(data){
 socket.on('receiveMessageEvent', function (data) {
     if ($('#room-sort_button').val() === '古い順'){
         if(data[0] === getUserName()){
-            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + data[3] +' onclick="delete_msg(this)" value="削除"/></p>');
+            $('#thread').prepend('<div class="thread-message"><p id=' + data[3] + '>' + data[0] + 'さんよ：' + data[2] + '<br>><b>' + data[1]+ '</b><input type=button id=' + data[3] +' onclick="delete_msg(this)" value="削除"/></p><div>');
         }else{
-            $('#thread').prepend('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').prepend('<div class="thread-message"><p id=' + data[3] + '>' + data[0] + 'さんや：' + data[2] + '<br>>' + data[1] + '</p><div>');
             flag = 0;
         }
     }else {
         if(data[0] === getUserName()){
-            $('#thread').append('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>><b>' + data[1]+ '</b></p>');
+            $('#thread').prepend('<div class="thread-message"><p id=' + data[3] + '>' + data[0] + 'さんも：' + data[2] + '<br>><b>' + data[1]+ '</b></p><div>');
         }else{
-            $('#thread').append('<p id=' + data[3] + '>' + data[0] + 'さん：' + data[2] + '<br>>' + data[1] + '</p>');
+            $('#thread').prepend('<div class="thread-message"><p id=' + data[3] + '>' + data[0] + 'さんり：' + data[2] + '<br>>' + data[1] + '</p><div>');
             flag = 0;
         }
     }
